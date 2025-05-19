@@ -1,4 +1,8 @@
-const { Config, TradeContext } = require('longport')
+const dotenv = require('dotenv');
+const { Config, TradeContext } = require('longport');
+
+// Load environment variables from .env file
+dotenv.config();
 
 /**
  * LongPort Trading API Account Asset Example
@@ -8,10 +12,8 @@ const { Config, TradeContext } = require('longport')
  * - LONGPORT_APP_SECRET: Your application secret from the LongPort user center
  * - LONGPORT_ACCESS_TOKEN: Your access token from the LongPort user center
  * 
- * Set these by inputting the following commands in your terminal:
- * export LONGPORT_APP_KEY="your_app_key"
- * export LONGPORT_APP_SECRET="your_app_secret"
- * export LONGPORT_ACCESS_TOKEN="your_access_token"
+ * These are loaded automatically from the .env file.
+ * See .env.example for the required format.
  */
 
 // Check if required environment variables are set
@@ -23,10 +25,11 @@ if (missingEnvVars.length > 0) {
   missingEnvVars.forEach(varName => {
     console.error(`  - ${varName}`);
   });
-  console.error('\nPlease set them using:');
+  console.error('\nPlease add them to your .env file:');
   missingEnvVars.forEach(varName => {
-    console.error(`  export ${varName}="your_value_here"`);
+    console.error(`  ${varName}=your_value_here`);
   });
+  console.error('\nSee .env.example for the required format.');
   process.exit(1);
 }
 
