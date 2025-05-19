@@ -8,7 +8,7 @@ const { Config, TradeContext } = require('longport')
  * - LONGPORT_APP_SECRET: Your application secret from the LongPort user center
  * - LONGPORT_ACCESS_TOKEN: Your access token from the LongPort user center
  * 
- * Set these using:
+ * Set these by inputting the following commands in your terminal:
  * export LONGPORT_APP_KEY="your_app_key"
  * export LONGPORT_APP_SECRET="your_app_secret"
  * export LONGPORT_ACCESS_TOKEN="your_access_token"
